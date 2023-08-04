@@ -1,11 +1,12 @@
 import React from 'react'
 
-function Home()
+function Home(props)
 {
+    console.log("props",props)
     return(
         <div>
             <div className="add-to-card">
-                <img src="https://img.freepik.com/premium-vector/add-card-icon-vector-isolated-white-background-eps-10_399089-1208.jpg" />
+                <img src="https://img.freepik.com/premium-vector/add-card-icon-vector-isolated-white-background-eps-10_399089-1208.jpg" alt="image"/>
             </div>
             <h1>Home Component</h1>
             <div class="card-wrapper">
@@ -21,7 +22,11 @@ function Home()
                     </span>
                 </div>
                 <div class="btn-wrapper item">
-                    <button>Add to Card</button>
+                    <button
+                    onClick={()=> 
+                       props.addToCardHandler({price:1000,name:'i phone'})
+                    }
+                    >Add to Card</button>
                 </div>
             </div>
         </div>
